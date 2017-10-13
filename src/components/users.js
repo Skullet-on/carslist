@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
-import { Users } from '../mocks/users'
+import { Users } from '../mocks/users';
 
 class UsersList extends Component {
-	constructor(){
-		super();
-		this.state = {
-			data: Users
-		}
-	}
-  render() {
+	render() {
     return (
       <div>
-        <Header/>
+        <h1>Users</h1>
         <table className="table table-striped table-hover">
         	<thead>
 				    <tr>
@@ -19,34 +13,23 @@ class UsersList extends Component {
 				      <th>First Name</th>
 				      <th>Last Name</th>
 				    </tr>
-				  </thead>
+			  </thead>
         	<tbody>
-        	 	{this.state.data.map((person, i) => <TableRow key = {i} data = {person} />)}
+        	 	{Users.map((user) => this.getRow(user))}
         	</tbody>
         </table>
       </div>
     );
   }
-}
-class Header extends Component{
-	render(){
-		return(
-			<div>
-				<h1> Users List </h1>
-			</div>
-		);
-	}
-}
-class TableRow extends Component{
-	render(){
-		return(
+  getRow(data) {
+  	return(
 			<tr>
-				<td>{this.props.data.id}</td>
-				<td>{this.props.data.name}</td>
-				<td>{this.props.data.surname}</td>
+				<td>{data.id}</td>
+				<td>{data.name}</td>
+				<td>{data.surname}</td>
 			</tr>
 		);
-	}
+  }
 }
 
 export default UsersList;
