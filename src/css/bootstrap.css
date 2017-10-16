@@ -23,6 +23,8 @@ header,
 nav,
 section {
   display: block;
+  background-color: #555;
+  color: #fff;
 }
 
 h1 {

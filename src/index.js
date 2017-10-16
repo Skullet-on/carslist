@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/index.css';
 import './css/bootstrap.css';
-import App from './components/app';
-import UsersList from './components/users'
+import Layout from './components/layout';
 
-ReactDOM.render(<UsersList />, document.getElementById('root'));
+ReactDOM.render(<Layout />, document.getElementById('root'));
