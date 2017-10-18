@@ -8,7 +8,6 @@ export default class Car extends Component{
 		};
 	}
 	handleClick(){
-		console.log(this.state.info)
 		this.setState({
 			info: !this.state.info
 		});
