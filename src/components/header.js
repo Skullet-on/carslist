@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 export default class Header extends Component{
 	render(){
 		return(
-			<navbar>
+			<header className='container-fluid text-center'>
 				Header
-			</navbar>
+			</header>
 		);
 	}
 }

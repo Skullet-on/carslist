@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import Header from './header';
 import Footer from './footer';
-import Cars from './cars/cars';
+import CarsList from './cars/cars';
 
-export default class Layout extends Component{
+export default class App extends Component{
 	render(){
 		return(
 			<div>
 				<Header />
-				<Cars />
+				<CarsList />
 				<Footer />
 			</div>
 		);
