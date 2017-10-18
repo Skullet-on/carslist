@@ -12,13 +12,13 @@ export default class CarsList extends Component {
 	}
 	handleSearch(e){
 		var searchQuery = e.target.value.toLowerCase();
-		var dc = Cars.filter(function(el) {
+		var filteredCarsList = Cars.filter(function(el) {
 			var searchValue = el.brand.toLowerCase();
 			return searchValue.indexOf(searchQuery) !== -1
 		});
 		
 		this.setState({
-			displayedcars: dc
+			displayedcars: filteredCarsList
 		});
 	}
 	render(){
@@ -30,10 +30,7 @@ export default class CarsList extends Component {
 						this.state.displayedcars.map((car) =>
 							<Car
 								key={car.id}
-								brand={car.brand} 
-								model={car.model} 
-								year={car.year}
-								info={false} 
+								car={car}
 							/>
 						)
 					}
