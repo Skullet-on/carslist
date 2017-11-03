@@ -3,3 +3,18 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+.box {
+  background-color: yellow;
+  border: solid 1px black;
+  height: 100px;
+  width: 100px;
+  opacity: 1.0;
+  box-sizing: border-box;
+  transition: height 500ms 0ms, opacity 500ms 500ms;
+}
+
+.box.hide {
+  transition: height 500ms 500ms, opacity 500ms 0ms;
+  opacity: 0.0;
+  height: 0px;
+}
