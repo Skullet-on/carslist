@@ -6,10 +6,10 @@ import Pagination from '../dataTable/pagination';
 export default class CarsList extends Component {
 	state = {cars: []}
 	componentWillMount() {
-    fetch('/cars')
-      .then(res => res.json())
-      .then(cars => this.setState({ cars }));
-  }
+		fetch('/cars')
+			.then(res => res.json())
+			.then(cars => this.setState({ cars }));
+	}
 	handleSearch(e){
 		const searchQuery = e.target.value.toLowerCase();
 		const filteredCarsList = this.state.cars.filter(function(el) {

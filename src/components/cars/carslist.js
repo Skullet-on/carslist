@@ -4,12 +4,17 @@ import Pagination from '../dataTable/pagination';
 
 
 export default class CarsList extends Component {
-	state = {cars: []}
+	constructor(props){
+		super(props);
+		this.state = {
+			cars: [],
+		}
+	}
 	componentWillMount() {
-    fetch('/cars')
-      .then(res => res.json())
-      .then(cars => this.setState({ cars }));
-  }
+		fetch('/cars')
+			.then(res => res.json())
+			.then(cars => this.setState({ cars }));
+	}
 	render(){
 		return(
 			<div>
