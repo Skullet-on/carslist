@@ -28,7 +28,6 @@ export default class Pagination extends Component{
 				    </li>
 				    <li className="page-item">
 				      <button
-				      	role="button"
 				      	className="page-link" 
 				      	aria-label="Previous"
 				      	onClick={e => this.handleClick(e)}
