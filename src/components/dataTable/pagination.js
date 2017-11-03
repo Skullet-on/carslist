@@ -8,7 +8,7 @@ export default class Pagination extends Component{
 		};
 	}
 	handleClick(e){
-		console.log(e);
+		console.log(e.target.value);
 	}
 	render(){
 		return(
@@ -16,36 +16,50 @@ export default class Pagination extends Component{
 				<nav aria-label="Page navigation example">
 				  <ul className="pagination">
 				    <li className="page-item">
-				      <a className="page-link" onClick={e => this.handleClick(e)} aria-label="First">
+				      <button 
+				      	className="page-link" 
+				      	onClick={e => this.handleClick(e)} 
+				      	aria-label="First"
+				      	value="first"
+				      >
 				        <span aria-hidden="true">&laquo;</span>
 				        <span className="sr-only">First</span>
-				      </a>
+				      </button>
 				    </li>
 				    <li className="page-item">
-				      <a
+				      <button
 				      	role="button"
 				      	className="page-link" 
 				      	aria-label="Previous"
 				      	onClick={e => this.handleClick(e)}
+				      	value="prev"
 				      >
-				        <span aria-hidden="true">prev</span>
 				        <span className="sr-only">Previous</span>
-				      </a>
+				        <span aria-hidden="true">prev</span>
+				      </button>
 				    </li>
-				    <li className="page-item"><a className="page-link" onClick={e => this.handleClick(e)}>1</a></li>
-				    <li className="page-item"><a className="page-link" onClick={e => this.handleClick(e)}>2</a></li>
-				    <li className="page-item"><a className="page-link" onClick={e => this.handleClick(e)}>3</a></li>
+				    <li className="page-item"><button className="page-link" onClick={e => this.handleClick(e)} value="1">1</button></li>
+				    <li className="page-item"><button className="page-link" onClick={e => this.handleClick(e)} value="2">2</button></li>
+				    <li className="page-item"><button className="page-link" onClick={e => this.handleClick(e)} value="3">3</button></li>
 				    <li className="page-item">
-				      <a className="page-link" onClick={e => this.handleClick(e)} aria-label="Next">
+				      <button className="page-link" 
+				      	onClick={e => this.handleClick(e)} 
+				      	aria-label="Next"
+				      	value="next"
+				      >
 				        <span aria-hidden="true">next</span>
 				        <span className="sr-only">Next</span>
-				      </a>
+				      </button>
 				    </li>
 				    <li className="page-item">
-				      <a className="page-link" onClick={e => this.handleClick(e)} aria-label="Last">
+				      <button className="page-link" 
+				      	onClick={e => this.handleClick(e)} 
+				      	aria-label="Last"
+				      	value="last"
+				      >
 				        <span aria-hidden="true">&raquo;</span>
 				        <span className="sr-only">Last</span>
-				      </a>
+				      </button>
 				    </li>
 				  </ul>
 				</nav>
