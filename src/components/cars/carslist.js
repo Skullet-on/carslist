@@ -13,14 +13,14 @@ export default class CarsList extends Component {
 	componentWillMount() {
 		fetch('/cars')
 			.then(res => res.json())
-			.then(cars => this.setState({ cars }));
+			.then(cars => this.props.setCars(cars));
 	}
 	render(){
 		return(
 			<div>
 				<div className='list-group'>
 					{ 
-						this.state.cars.map((car) =>
+						this.props.cars.map((car) =>
 							<Car
 								key={car.id}
 								car={car}
