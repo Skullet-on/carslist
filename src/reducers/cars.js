@@ -1,18 +1,8 @@
-const initialState = {
-	cars: [{
-		brand: "VW",
-		model: "Passat",
-	},
-	{
-		brand: "Audi",
-		model: "A4",
-	}]
-}
-export default function carsList(state = initialState, action){
+export default function (state = [], action){
 	switch (action.type) {
-	case "SET_CARS":
-		return { ...state, cars: action.payload }
+	case "CARS_LOADED":
+		return action.data;
 	default:
-		return state
+		return state;
 	}
 }

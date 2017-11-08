@@ -1,34 +1,35 @@
 import React, { Component } from 'react';
 import Car from './car';
-import Pagination from '../dataTable/pagination';
+import { connect } from 'react-redux';
+import { loadCars } from '../../actions/actionCars'
+import { bindActionCreators } from 'redux';
+//import Pagination from '../dataTable/pagination';
 
 
-export default class CarsList extends Component {
+class CarsList extends Component {
 	constructor(props){
 		super(props);
-		this.state = {
-			cars: [],
-		}
+		this.props.loadCars();
 	}
-	componentWillMount() {
-		fetch('/cars')
-			.then(res => res.json())
-			.then(cars => this.props.setCars(cars));
-	}
+	handleClick(){
+    this.props.loadCars();
+  }
 	render(){
 		return(
-			<div>
-				<div className='list-group'>
-					{ 
-						this.props.cars.map((car) =>
-							<Car
-								key={car.id}
-								car={car}
-							/>
-						)
-					}
-				</div>
+			<div className='list-group'>
+				{
+					this.props.cars.map((car) => <Car
+						key = {car.id}
+						car = {car} />)
+				}
 			</div>
 		);
 	}
 }
+
+//export default connect(mapStateToProps, mapDispatchToProps)(CarsList);
+export default connect(
+  (state) => {return {cars: state.cars};},
+  (dispatch) => bindActionCreators({loadCars}, dispatch)  
+)(CarsList);
+

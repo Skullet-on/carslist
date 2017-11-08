@@ -5,13 +5,11 @@ import './css/bootstrap.css';
 import App from './components/app';
 
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import rootReducer from './reducers/index';
-
-const store = createStore(rootReducer);
+import store from './store';
 
 
-ReactDOM.render(
-	<Provider store={store}>
+ReactDOM.render(<Provider store={store}>
 		<App />
 	</Provider>, document.getElementById('root'));
+
+store.subscribe(() => console.log('New state', store.getState()));

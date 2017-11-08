@@ -1,6 +1,9 @@
-export default function setCarsAction(cars) {
+import { getCars } from '../api';
+
+export function loadCars() {
 	return {
-		type: "SET_CARS",
-		payload: cars,
-	}
+		type: 'PROMISE',
+		actions: ['CARS_LOADING', 'CARS_LOADED', 'CARS_LOAD_FAILURE'],
+		payload: getCars(),
+	};
 }
